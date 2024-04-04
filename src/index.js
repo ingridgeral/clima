@@ -8,8 +8,6 @@ function refreshWeather(response) {
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
   let iconElement = document.querySelector("#icon");
-  iconElement.innerHTML = `<img src="{response.data.condition.icon_url}"
-              class="weather-app-icon" />`;
 
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = formatDate(date);
@@ -44,7 +42,7 @@ function formatDate(date) {
 }
 
 function searchCity(city) {
-  let apiKey = "b2a5adcct04b33178913oc335f405433";
+  let apiKey = "3e3afaeecafeb1bfodat051ce0564400";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
   axios.get(apiUrl).then(refreshWeather);
 }
